@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Revenue Forecasting System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2 class="logo enterprise-logo">
+    <span class="brand-accent">AI</span> Revenue Platform
+</h2>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/upload">Upload</a></li>
+        <li><a href="/forecast">Forecast</a></li>
+        <li><a href="/ml-models">ML Models</a></li>
+        <li><a href="/segmentation">Segmentation</a></li>
+        <li><a href="/anomaly">Anomaly</a></li>
+
+        <li class="dropdown">
+            <a href="#">Reports ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="/summary">Summary</a></li>
+                <li><a href="/download-report">Download Report</a></li>
+                <li><a href="/generate-pdf">Generate PDF</a></li>
+                <li><a href="/model-performance">Model Performance</a></li>
+                <li><a href="/ai-insights">AI Insights</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".dropdown > a");
+    const menu = document.querySelector(".dropdown-menu");
+
+    dropdown.addEventListener("click", function (e) {
+        e.preventDefault();
+        menu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown")) {
+            menu.classList.remove("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

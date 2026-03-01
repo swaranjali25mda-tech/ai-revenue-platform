@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="upload-container">
+
+    <div class="card">
+        <h2>Upload Sales Data</h2>
+        <p>Please upload your CSV file containing revenue data.</p>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br><br>
+            <button type="submit">Upload & Continue</button>
+        </form>
+
+        <br>
+        <a href="/"><button class="secondary">Back</button></a>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Revenue Forecast</h2>
+
+<img src="/static/images/forecast.png" width="700">
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if forecast_data %}
+<h2>Future Revenue Predictions</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Date</th>
+        <th>Predicted Revenue</th>
+        <th>Lower Bound</th>
+        <th>Upper Bound</th>
+    </tr>
+
+    {% for row in forecast_data %}
+    <tr>
+        <td>{{ row.date }}</td>
+        <td>{{ row.prediction }}</td>
+        <td>{{ row.lower }}</td>
+        <td>{{ row.upper }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div class="upload-container"></div>
+<br>
+        <a href="/"><button class="secondary">Back</button></a>
+<br><br>
+<a href="/download-forecast">
+    <button>Download Forecast CSV</button>
+</a>
+
+<br><br>
+<a href="/ml-models">
+    <button style="padding:5px 10px; font-size:14px;">
+        Go to ML Model Comparison →
+    </button>
+</a>
+</div>
+
+{% endif %}
+
+{% endblock %}

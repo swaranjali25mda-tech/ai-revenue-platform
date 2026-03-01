@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Machine Learning Model Comparison</h2>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+{% if results %}
+<table border="1">
+    <tr>
+        <th>Model</th>
+        <th>R2 Score</th>
+        <th>MAE</th>
+    </tr>
+
+    {% for row in results %}
+    <tr>
+        <td>{{ row.model }}</td>
+        <td>{{ row.R2 }}</td>
+        <td>{{ row.MAE }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<br><br>
+
+<h3>R2 Score Comparison</h3>
+<img src="/static/images/ml_r2.png" width="600">
+
+<br><br>
+
+<h3>MAE Comparison</h3>
+<img src="/static/images/ml_mae.png" width="600">
+
+<div class="upload-container"></div>
+        <a href="/"><button class="secondary">Back</button></a>
+<br><br>
+<a href="/segmentation">
+    <button style="padding:10px 20px; font-size:16px;">
+        Next → Customer Segmentation
+    </button>
+</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Revenue Anomaly Detection</h2>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+{% if anomaly_count %}
+<p><strong>Total Anomalies Detected:</strong> {{ anomaly_count }}</p>
+{% endif %}
+
+<img src="/static/images/anomaly.png" width="700">
+
+{% if anomalies %}
+<h3>Detected Anomaly Records</h3>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Date</th>
+        <th>Revenue</th>
+    </tr>
+
+    {% for row in anomalies %}
+    <tr>
+        <td>{{ row.date }}</td>
+        <td>{{ row.revenue }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<div class="upload-container"></div>
+        <a href="/"><button class="secondary">Back</button></a>
+<a href="/">
+    <button> Done</button>
+</a>
+</div>
+
+{% endblock %}

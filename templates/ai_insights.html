@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>AI Business Insights</h2>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% else %}
+
+<ul>
+    {% for insight in insights %}
+        <li>{{ insight }}</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Advanced Revenue Summary</h2>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% else %}
+
+<h3>📊 Key Metrics</h3>
+<p>Total Revenue: ₹{{ total }}</p>
+<p>Average Revenue: ₹{{ average }}</p>
+<p>Maximum Revenue: ₹{{ max }}</p>
+<p>Minimum Revenue: ₹{{ min }}</p>
+
+<h3>📈 Growth Analysis</h3>
+<p>Average Growth Rate: {{ avg_growth }}%</p>
+<p>Best Performing Month: {{ best_month }}</p>
+<p>Worst Performing Month: {{ worst_month }}</p>
+<p>Overall Trend: {{ trend }}</p>
+
+{% endif %}
+
+{% endblock %}

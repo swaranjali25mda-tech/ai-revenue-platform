@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Customer Segmentation</h2>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<img src="/static/images/cluster.png" width="600">
+<h3>Cluster Distribution</h3>
+<img src="/static/images/cluster_pie.png" width="400">
+<br><br>
+
+{% if cluster_data %}
+<h3>Cluster Summary</h3>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Cluster</th>
+        <th>Average Revenue</th>
+        <th>Min Revenue</th>
+        <th>Max Revenue</th>
+        <th>Customer Count</th>
+    </tr>
+
+    {% for row in cluster_data %}
+    <tr>
+        <td>{{ row.Cluster }}</td>
+        <td>{{ row.Avg_Revenue }}</td>
+        <td>{{ row.Min_Revenue }}</td>
+        <td>{{ row.Max_Revenue }}</td>
+        <td>{{ row.Customer_Count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<h3>Business Insight</h3>
+<p>{{ insight }}</p>
+
+<div class="upload-container"></div>
+        <a href="/"><button class="secondary">Back</button></a>
+<br><br>
+<a href="/anomaly">
+    <button style="padding:5px 10px; font-size:16px;">
+        Next → Anomaly Detection
+    </button>
+</a>
+</div>
+
+
+{% endblock %}

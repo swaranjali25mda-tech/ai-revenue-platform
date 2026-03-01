@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+gunicorn
+jinja2
+pandas
+numpy==1.26.4
+scikit-learn
+matplotlib
+reportlab
+prophet==1.1.5
+cmdstanpy==1.2.0

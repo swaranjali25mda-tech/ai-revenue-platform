@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard">
+
+    <h2 class="dash-title">Revenue Dashboard</h2>
+
+    <!-- KPI Cards -->
+    <div class="kpi-container">
+    <div class="kpi-card">
+        <h3>Total Revenue</h3>
+        <p>₹ {{ total }}</p>
+    </div>
+
+    <div class="kpi-card">
+        <h3>Average Revenue</h3>
+        <p>₹ {{ average }}</p>
+    </div>
+
+    <div class="kpi-card">
+        <h3>Max Revenue</h3>
+        <p>₹ {{ max }}</p>
+    </div>
+</div>
+
+    <!-- Graph Section -->
+    <div class="graph-container">
+        <h3>Revenue Trend</h3>
+        <img src="/static/images/graph.png" alt="Revenue Graph" width="600">
+    </div>
+
+    <div class="dash-buttons">
+        <a href="/forecast"><button>Generate Forecast</button></a>
+        <a href="/upload"><button class="secondary">Back</button></a>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a002e, #3a0ca3);
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.4);
+}
+
+
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    color: #c77dff;
+}
+
+.content {
+    padding: 40px;
+}
+
+button {
+    background: #7209b7;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.hero {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    color: #e0aaff;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons button {
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background: #9d4edd;
+    transform: scale(1.05);
+}
+
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(199,125,255,0.4);
+}
+
+.card h2 {
+    color: #e0aaff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    margin-top: 15px;
+    color: white;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid #c77dff;
+}
+
+.dashboard {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.dash-title {
+    font-size: 32px;
+    color: #e0aaff;
+}
+
+.kpi-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.kpi-card {
+    background: rgba(255,255,255,0.08);
+    padding: 25px;
+    width: 220px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(199,125,255,0.4);
+}
+
+.kpi-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.kpi-card p {
+    font-size: 22px;
+    color: #c77dff;
+}
+
+.graph-container {
+    margin-top: 50px;
+}
+
+.dash-buttons {
+    margin-top: 40px;
+}
+
+.dash-buttons button {
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 25px;
+}
+
+
+
+
+/* ================= TABLE STYLING ================= */
+
+.table-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    width: 85%;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(199,125,255,0.3);
+}
+
+.styled-table thead {
+    background: #7209b7;
+}
+
+.styled-table th {
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.styled-table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.styled-table tbody tr:hover {
+    background: rgba(199,125,255,0.15);
+    transform: scale(1.01);
+}
+
+.lower {
+    color: #ff9e00;
+}
+
+.upper {
+    color: #00f5d4;
+}
+
+
+
+
+
+
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background: #111827;   /* dark slate fintech tone */
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ONLY direct ul inside navbar */
+.navbar > ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+    color: #c77dff;
+}
+
+/* ================= PREMIUM DROPDOWN ================= */
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+
+    min-width: 230px;
+    padding: 10px 0;
+    border-radius: 16px;
+
+    /* GLASS EFFECT */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(199,125,255,0.2);
+
+    z-index: 2000;
+
+    /* ANIMATION SETUP */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.35s ease;
+}
+
+/* Vertical layout */
+.dropdown-menu li {
+    list-style: none;
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 22px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(199,125,255,0.2);
+    padding-left: 26px; /* smooth slide effect */
+}
+
+/* SHOW STATE (JS toggle) */
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/* ================= FINTECH SAAS LOGO ================= */
+
+.fintech-logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Accent for AI */
+.brand-accent {
+    color: #8b5cf6;   /* modern fintech purple */
+    font-weight: 700;
+}
+
+/* Subtle underline animation */
+.fintech-logo {
+    position: relative;
+}
+
+.fintech-logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #8b5cf6;
+    transition: width 0.3s ease;
+}
+
+.fintech-logo:hover::after {
+    width: 100%;
+}
