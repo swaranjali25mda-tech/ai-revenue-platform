@@ -98,6 +98,17 @@ def forecast(request: Request):
         changepoint_prior_scale=0.05
     )
 
+    df["ds"] = pd.to_datetime(df["ds"])
+
+# Remove duplicate dates
+df = df.drop_duplicates(subset=["ds"])
+
+# Sort by date
+df = df.sort_values("ds")
+
+# Reset index
+df = df.reset_index(drop=True)
+
     model.fit(df)
 
     future = model.make_future_dataframe(periods=3, freq='ME')
