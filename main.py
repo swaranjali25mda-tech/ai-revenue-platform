@@ -34,8 +34,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
-   templates.TemplateResponse(request, "index.html", {"request": request})
-
+   return templates.TemplateResponse(request=request, name="index.html")
 @app.get("/upload", response_class=HTMLResponse)
 def upload_page(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request})
