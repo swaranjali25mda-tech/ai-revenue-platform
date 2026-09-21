@@ -37,7 +37,7 @@ def home(request: Request):
    return templates.TemplateResponse(request=request, name="index.html")
 @app.get("/upload", response_class=HTMLResponse)
 def upload_page(request: Request):
-    return templates.TemplateResponse("upload.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="upload.html")
 
 @app.post("/upload", response_class=HTMLResponse)
 async def upload_file(request: Request, file: UploadFile = File(...)):
@@ -67,12 +67,15 @@ async def upload_file(request: Request, file: UploadFile = File(...)):
     plt.savefig("static/images/graph.png")
     plt.close()
 
-    return templates.TemplateResponse("dashboard.html", {
-        "request": request,
+    return templates.TemplateResponse(
+    request=request,
+    name="dashboard.html",
+    context={
         "total": round(total_revenue, 2),
         "average": round(avg_revenue, 2),
         "max": round(max_revenue, 2)
-    })
+    }
+)
 
 @app.get("/forecast", response_class=HTMLResponse)
 def forecast(request: Request):
