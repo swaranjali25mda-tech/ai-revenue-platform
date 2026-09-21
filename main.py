@@ -666,8 +666,8 @@ def model_performance_page(
 
     forecast = model.predict(future)
 
-    actual = df["y"]
-    predicted = forecast["yhat"]
+    actual = df["y"].reset_index(drop=True)
+predicted = forecast["yhat"].iloc[:len(actual)].reset_index(drop=True)
 
     mae = mean_absolute_error(
         actual,
