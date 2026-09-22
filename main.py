@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, UploadFile, File
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+
 import shutil
 import os
 import pandas as pd
@@ -22,6 +23,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
 app = FastAPI()
+
 latest_uploaded_file = None
 
 
@@ -666,8 +668,9 @@ def model_performance_page(
 
     forecast = model.predict(future)
 
+    # Keep the prediction length equal to the actual data length
     actual = df["y"].reset_index(drop=True)
-predicted = forecast["yhat"].iloc[:len(actual)].reset_index(drop=True)
+    predicted = forecast["yhat"].iloc[:len(actual)].reset_index(drop=True)
 
     mae = mean_absolute_error(
         actual,
